@@ -1,0 +1,6 @@
+.comment--main--container {
+	display: flex;
+	margin: 20px 0;
+	padding: 0 15px;
+	border-bottom: 0.5px solid rgb(199, 198, 198);
+}

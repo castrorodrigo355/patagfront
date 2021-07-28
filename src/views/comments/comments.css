@@ -1,0 +1,27 @@
+.comments--main--container {
+	position: absolute;
+	top: 0;
+	left: -100%;
+	height: 100%;
+	width: 100%;
+	background: rgb(227, 227, 227);
+	z-index: 100;
+	transition: all 0.3s;
+}
+
+.comments--main--container.comments--opened {
+	left: 0;
+}
+
+.comments--main--container--close {
+	height: 60px;
+}
+
+.comments--main--container--list {
+	height: calc(100% - 140px);
+	overflow: auto;
+}
+
+.comments--main--container--input {
+	height: 80px;
+}
