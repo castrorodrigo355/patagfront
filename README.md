@@ -1,46 +1,11 @@
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `yarn start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+1 - Yarn or npm i to install dependencies.
+2 - There are three main containers (AppContainer, PostsContainer, CommentsContainers) to connect with redux states and actions to dispatch.
+3 - Each container has a main child (App , Posts, Comments) that receive props from their parent container.
+4 - Each child view displays its own list.
+5 - There is an Error/ Try Again component who is available to repeeat fetchs data (See screenshoots folder).
+5 - One post can fetch its comments. We can add comments for a post. Each comment belongs to a post.
+6 - Our data is stored locally, if you refresh the browser, need to begin from scratch
+7 - We ask for a post comments existence, if exists, get that data or fetch it with redux-thunk. Data is persisted in our redux-store
+8 - We have a common action types, action creators, enums, interfaces, combine reducers, async middleware.
+9 - Lack availability time for unit tests last days.
+10 - Thanks.

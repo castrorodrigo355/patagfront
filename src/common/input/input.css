@@ -2,15 +2,26 @@
 	height: 100%;
 	width: 100%;
 	overflow: hidden;
-	border: 1px solid rgb(230, 227, 227);
-	border-radius: 10px;
+	border-bottom-color: gray;
+	border-bottom-width: 1px;
+	background: black;
+	margin: 10px 0;
 }
 
 .input--main--container > input {
-	height: 100%;
-	width: 95%;
-	padding: 0 10px;
-	font-size: 18px;
-	border: none;
+	color: white;
+	background: transparent;
 	outline: none;
+	text-align: left;
+	border: none;
+	width: 95%;
+	padding: 0 5px;
+	overflow: auto;
+	border-bottom: 1px solid gray;
+}
+
+.input--main--container > input::placeholder {
+	font-size: 13px;
+	color: #b8b8b8;
+	text-align: left;
 }

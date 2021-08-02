@@ -1,17 +1,17 @@
 .addComment--main--container {
 	height: 100%;
-	background: rgb(181, 180, 180);
-	padding: 20px;
+	width: 100%;
 }
 
 .addComment--main--container > form {
+	width: 100%;
 	display: flex;
+	flex-direction: column;
 	align-items: center;
-	justify-content: center;
+	justify-content: space-between;
 }
 
 .addComment--main--container--field {
-	height: 40px;
-	width: 300px;
-	margin: 0 5px;
+	height: 35px;
+	width: 95%;
 }

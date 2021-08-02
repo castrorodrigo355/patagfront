@@ -1,15 +1,10 @@
 import { useEffect } from "react";
-import { actionCreators } from "./posts";
-import { useDispatch } from "react-redux";
-import { bindActionCreators } from "redux";
-import { Posts } from "./views/posts/posts";
-import { Comments } from "./views/comments/comments";
+import { ContainerProps } from "../../containers/AppContainer";
+import PostsContainer from "../../containers/PostsContainer";
+import CommentsContainer from "../../containers/CommentsContainer";
 import "./App.css";
 
-function App() {
-	const dispatch = useDispatch();
-	const { getPosts } = bindActionCreators(actionCreators, dispatch);
-
+const App: React.FC<ContainerProps> = ({ getPosts }) => {
 	const setAvailableArea = () => {
 		let vh = window.innerHeight * 0.01;
 		document.documentElement.style.setProperty("--vh", `${vh}px`);
@@ -23,14 +18,14 @@ function App() {
 
 	useEffect(() => {
 		getPosts();
-	}, []);
+	}, [getPosts]);
 
 	return (
 		<div className="app--main--container">
-			<Posts />
-			<Comments />
+			<PostsContainer />
+			<CommentsContainer />
 		</div>
 	);
-}
+};
 
 export default App;

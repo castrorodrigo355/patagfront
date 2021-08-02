@@ -9,16 +9,18 @@ export const getPosts = () => {
             const res = await fetch(url);
             if (res.status === 200) {
                 const response = await res.json();
-                const posts = response.reverse();
                 setTimeout(() => {
-
-                    dispatch({ type: ActionTypes.REQUEST_POSTS_SUCCESS, payload: posts });
+                    dispatch({ type: ActionTypes.REQUEST_POSTS_SUCCESS, payload: response });
                 }, 2000)
             } else {
-                dispatch({ type: ActionTypes.REQUEST_POSTS_FAILURE });
+                setTimeout(() => {
+                    dispatch({ type: ActionTypes.REQUEST_POSTS_FAILURE });
+                }, 2000);
             }
         } catch (error) {
-            dispatch({ type: ActionTypes.REQUEST_POSTS_FAILURE });
+            setTimeout(() => {
+                dispatch({ type: ActionTypes.REQUEST_POSTS_FAILURE });
+            }, 2000);
         }
     };
 };

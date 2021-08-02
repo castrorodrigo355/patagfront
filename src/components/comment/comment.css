@@ -1,6 +1,59 @@
 .comment--main--container {
 	display: flex;
+	flex-direction: row;
+	align-items: flex-start;
+	justify-content: space-between;
 	margin: 20px 0;
 	padding: 0 15px;
-	border-bottom: 0.5px solid rgb(199, 198, 198);
+	overflow: auto;
+}
+
+.comment--main--container--profile {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: flex-start;
+}
+
+.comment--main--container--profile--image {
+	height: 50px;
+	width: 50px;
+	border-radius: 50%;
+	overflow: hidden;
+}
+
+.comment--main--container--profile--image > img {
+	height: 100%;
+	width: 100%;
+	object-fit: cover;
+}
+
+.comment--main--container--detail {
+	width: calc(100% - 100px);
+	padding: 0 15px;
+	color: white;
+}
+
+.comment--main--container--detail > strong {
+	padding-right: 10px;
+	text-decoration: underline;
+}
+
+.comment--main--container--like {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: fit-content;
+	width: 50px;
+}
+
+.comment--main--container--like--image {
+	height: 18px;
+	width: 18px;
+}
+
+.comment--main--container--like--image > img {
+	height: 100%;
+	width: 100%;
+	object-fit: cover;
 }

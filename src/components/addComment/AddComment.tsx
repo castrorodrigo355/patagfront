@@ -1,13 +1,8 @@
 import { useState } from "react";
-import { bindActionCreators } from "redux";
-import { RootState } from "../../store/store";
-import { actionCreators } from "../../comments";
 import { Input } from "../../common/input/input";
-import { createComment } from "../../helpers/helpers";
-import { useSelector, useDispatch } from "react-redux";
 import { initialState } from "../../constants/constants";
-import "./addComent.css";
 import { Button } from "../../common/button/button";
+import "./addComment.css";
 
 interface FormComment {
 	name: string;
@@ -15,11 +10,7 @@ interface FormComment {
 	body: string;
 }
 
-export const AddComent = () => {
-	const dispatch = useDispatch();
-	const { addComment } = bindActionCreators(actionCreators, dispatch);
-	const { selectedPost } = useSelector((state: RootState) => state.comment);
-
+export const AddComment = ({ selectedPost, addComment }: any) => {
 	const [data, setData] = useState<FormComment>(initialState);
 	const { name, email, body } = data;
 
@@ -28,7 +19,7 @@ export const AddComent = () => {
 
 	const onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
 		event.preventDefault();
-		addComment(createComment(selectedPost, data));
+		addComment({ selectedPost, name, email, body });
 		setData({ name: "", email: "", body: "" });
 	};
 
@@ -66,7 +57,7 @@ export const AddComent = () => {
 				</div>
 				<div className="addComment--main--container--field">
 					<Button disabled={disabled} type="submit">
-						ADD COMMENT
+						COMENTAR
 					</Button>
 				</div>
 			</form>

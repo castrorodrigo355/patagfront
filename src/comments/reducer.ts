@@ -3,7 +3,7 @@ import { ActionTypes, Action, CommentState } from "./types";
 const initialState: CommentState = {
     loadingComments: false,
     errorComments: false,
-    comments: [],
+    comments: {},
     selectedPost: null
 };
 
@@ -23,26 +23,40 @@ export const commentsReducer = (
                 ...state,
                 loadingComments: false,
                 errorComments: true,
-                selectedPost: null
             };
         case ActionTypes.REQUEST_COMMENTS_SUCCESS:
+            const { payload } = action;
+            const { id, response } = payload;
             return {
                 ...state,
                 loadingComments: false,
-                comments: action.payload
+                comments: { ...state.comments, [id]: response },
             };
         case ActionTypes.CLOSE_COMMENTS:
             return {
                 ...state,
                 loadingComments: false,
+                errorComments: false,
                 selectedPost: null,
-                comments: []
             };
-        case ActionTypes.ADD_COMMENT:
+        case ActionTypes.ADD_COMMENT: {
+            const { postId } = action.payload;
             return {
                 ...state,
-                comments: [...state.comments, action.payload]
+                comments: {
+                    ...state.comments,
+                    [postId]: [...state.comments[postId], action.payload],
+                },
             };
+        }
+        case ActionTypes.SET_COMMENTS_BY_SELECTEDID: {
+            return {
+                ...state,
+                loadingComments: false,
+                errorComments: false,
+                selectedPost: action.payload,
+            };
+        }
         default:
             return state;
     }

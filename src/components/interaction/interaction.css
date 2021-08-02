@@ -1,0 +1,23 @@
+.interaction--main--container {
+	margin: 0 0 10px 0;
+}
+
+.interaction--main--container--image {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 40px;
+	width: 40px;
+	color: white;
+}
+
+.interaction--main--container--image > img {
+	height: 30px;
+	width: 30px;
+	object-fit: cover;
+}
+
+.interaction--main--container--count {
+	color: white;
+	font-size: 12px;
+}

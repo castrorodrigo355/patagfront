@@ -3,7 +3,7 @@ export const urlPost = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQH
 export const urlComment = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXBNELD15a-c-n8lu4Xw8onqEk-yFOfUiWSw&usqp=CAU";
 
 export const initialState = {
-    name: "Rodrigo",
-    email: "Rodrigo@gmail.com",
-    body: "New comment",
+    name: "",
+    email: "",
+    body: "",
 };

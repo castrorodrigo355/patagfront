@@ -1,6 +1,6 @@
 import "./button.css";
 
-export const Button = ({ disabled, children, type }: any) => {
+export const Button = ({ disabled, children, type, onClick }: any) => {
 	return (
 		<button
 			disabled={disabled}
@@ -8,6 +8,7 @@ export const Button = ({ disabled, children, type }: any) => {
 				disabled ? "disabled--container" : ""
 			}`}
 			type={type}
+			onClick={onClick}
 		>
 			{children}
 		</button>
