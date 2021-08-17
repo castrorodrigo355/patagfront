@@ -3,7 +3,7 @@ import {
 	closeComments,
 	addComment,
 	getCommentsById,
-} from "../comments/actions";
+} from "../redux/comments/actions";
 import { Dispatch, bindActionCreators } from "redux";
 import { Comments } from "../views/comments/comments";
 

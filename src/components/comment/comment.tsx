@@ -1,4 +1,4 @@
-import { TComment } from "../../comments/types";
+import { TComment } from "../../redux/comments/types";
 import { urlComment } from "../../constants/constants";
 import { Intereaction } from "../interaction/interaction";
 import "./comment.css";

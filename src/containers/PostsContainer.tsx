@@ -1,11 +1,12 @@
 import { connect } from "react-redux";
-import { Action } from "../comments/types";
+import { Action } from "../redux/comments/types";
 import { Posts } from "../views/posts/posts";
 import { Dispatch, bindActionCreators } from "redux";
-import { getPosts } from "../posts/actions";
-import { getCommentsById } from "../comments/actions";
+import { getPosts } from "../redux/posts/actions";
+import { getCommentsById } from "../redux/comments/actions";
 
 const mapStateToProps = (state: any) => state.post;
+
 const mapDispatchToProps = (dispatch: Dispatch<Action>) => ({
 	getPosts: bindActionCreators(getPosts, dispatch),
 	getCommentsById: bindActionCreators(getCommentsById, dispatch),

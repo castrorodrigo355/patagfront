@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import MainContainer from "./containers/MainContainer";
 import reportWebVitals from "./reportWebVitals";
-import AppContainer from "./containers/AppContainer";
 import { store } from "./store/store";
 import { Provider } from "react-redux";
 import "./index.css";
@@ -9,7 +9,7 @@ import "./index.css";
 ReactDOM.render(
 	<React.StrictMode>
 		<Provider store={store}>
-			<AppContainer />
+			<MainContainer />
 		</Provider>
 	</React.StrictMode>,
 	document.getElementById("root"),

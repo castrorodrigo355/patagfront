@@ -1,4 +1,4 @@
-import { Fragment } from "react";
+import { Fragment, useEffect } from "react";
 import { Post } from "../../components/post/post";
 import { Spinner } from "../../common/spinner/spinner";
 import { ErrorTryAgain } from "../../components/errorTryAgain/errorTryAgain";
@@ -10,23 +10,29 @@ export const Posts = ({
 	posts,
 	getPosts,
 	getCommentsById,
-}: any) => (
-	<div className="posts--main--container">
-		{loadingPosts ? (
-			<Spinner />
-		) : !loadingPosts && errorPosts ? (
-			<ErrorTryAgain
-				title={"Error Posts. Intente otra vez"}
-				onClick={() => getPosts()}
-			/>
-		) : !loadingPosts && posts ? (
-			<div className="posts--main--container--list">
-				{posts.map(({ id, ...args }: any) => (
-					<Post key={id} {...args} onClick={() => getCommentsById(id)} />
-				))}
-			</div>
-		) : (
-			<Fragment />
-		)}
-	</div>
-);
+}: any) => {
+	useEffect(() => {
+		getPosts();
+	}, [getPosts]);
+
+	return (
+		<div className="posts--main--container">
+			{loadingPosts ? (
+				<Spinner />
+			) : !loadingPosts && errorPosts ? (
+				<ErrorTryAgain
+					title={"Error Posts. Intente otra vez"}
+					onClick={() => getPosts()}
+				/>
+			) : !loadingPosts && posts ? (
+				<div className="posts--main--container--list">
+					{posts.map(({ id, ...args }: any) => (
+						<Post key={id} {...args} onClick={() => getCommentsById(id)} />
+					))}
+				</div>
+			) : (
+				<Fragment />
+			)}
+		</div>
+	);
+};

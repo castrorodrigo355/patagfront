@@ -1,7 +1,8 @@
 import thunk from "redux-thunk";
 // import { createLogger } from "redux-logger";
-import { postsReducer } from "../posts/reducer";
-import { commentsReducer } from "../comments/reducer";
+import { authReducer } from "../redux/auth/reducer";
+import { postsReducer } from "../redux/posts/reducer";
+import { commentsReducer } from "../redux/comments/reducer";
 import { createStore, combineReducers, applyMiddleware, compose } from "redux";
 
 declare global {
@@ -15,6 +16,7 @@ declare global {
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const reducers = combineReducers({
+    auth: authReducer,
     post: postsReducer,
     comment: commentsReducer,
 });

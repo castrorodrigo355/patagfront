@@ -1,0 +1,17 @@
+.login--main--container {
+	height: 100%;
+	width: 100%;
+}
+
+.login--main--container > form {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.login--main--container--field {
+	height: 35px;
+	width: 95%;
+}
